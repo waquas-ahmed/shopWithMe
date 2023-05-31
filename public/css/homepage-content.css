@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#main--container {
+    width: 100vw;
+    min-height: 30vh;
+}
+
+.front__image {
+    margin: 20px auto;
+    width: 90%;
+    display: grid;
+    place-content: center;
+    border-bottom: 1px grey solid;
+    padding-bottom: 40px;
+}
+
+.container--products__infinite {
+    display: grid;
+    place-items: center;
+    width: 90%;
+    position: relative;
+    margin: auto;
+}
+
+.first--section__infineMoving {
+    display: flex;
+    width: calc(250px * 15);
+    /* animation: scroll 60s linear infinite; */
+    margin-top: 15px;
+}
+
+.first--section__infineMoving:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-250px*7));
+    }
+
+}
+
+.first--section__infineMoving li {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blueviolet;
+    padding: 15px;
+    perspective: 100px;
+    border: 0.5px solid black;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+.first--section__infineMoving li a {
+    transition: transform 1s;
+    text-decoration: none;
+    color: black;
+}
+
+.first--section__infineMoving li a .product--card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.first--section__infineMoving li a:hover {
+    transform: translateZ(15px);
+}
+
+.first--section__infineMoving li a img {
+    width: 100px;
+    border: 0.3 black solid;
+    border-radius: 5px;
+}
+
+.first--section__infineMoving li a img {
+    width: 100px;
+    border: 0.3 black solid;
+    border-radius: 5px;
+}
+
+.first--section__infineMoving li a .gender--category {
+    margin: 7px 0;
+}
+
+.first--section__infineMoving li a .product--card__title {
+    color: beige;
+}
+
+
+/* ///////////////////////////////////////////////////////////////////// */
+/* Container 2 that is container--products__interestedIn */
+
+.container--products__interestedIn {
+    border-top: 1px grey solid;
+    width: 90%;
+    margin: 40px auto;
+}
+
+
+.container--products__interestedIn h2 {
+    font-size: 20px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+
+.second--section__todayDeal {
+    display: flex;
+    /* background-color: gray; */
+    list-style-type: none;
+    margin-top: 20px;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.second--section__todayDeal li {
+    margin: 0px 10px;
+    padding: 15px 0;
+    border-right: 1px grey solid;
+    padding-right: 10px;
+}
+
+.second--section__todayDeal li:last-child {
+    border-right: none;
+}
+
+.second--section__todayDeal a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+
+.second--section__todayDeal .product--card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.todays--deal__withOff {
+    margin: 10px 0;
+}
+
+.todays--deal__withOff .discount {
+    background-color: #CC0C39;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.deal--of__day {
+    font-weight: 700;
+    color: #CC0C39;
+}
+
+.product--card .product--card__title {
+    color: black;
+}
