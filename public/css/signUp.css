@@ -1,0 +1,22 @@
+#main--container__signup {
+    width: 100%;
+    height: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup__form {
+    height: 730px;
+    background-color: wheat;
+    width: 850px;
+    box-shadow: 21px -9px 20px #9a8ddb96, -11px -9px 20px #9a8ddb96;
+    background-image: linear-gradient(to right, #7dd56f, #28b487);
+    border-radius: 10px;
+}
+
+.signup__form h2 {
+    display: grid;
+    place-content: center;
+    margin-top: 50px;
+}
