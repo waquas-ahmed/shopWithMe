@@ -1,33 +1,38 @@
 const fs = require('fs');
 
 const Product = require('../models/productModel');
+const ApiFeatures = require('../utility/apiFeatures');
+const catchAsync = require('../utility/catchAsync');
+const AppError = require('../utility/appError');
+const { match } = require('assert');
 
-// exports.checkID = async (req, res, next, value) => {
-//     console.log('value',value)
-//     const product = await Product.findById(value);
-//     console.log('product',value)
-//     if (!product) return res.status(404).json({
-//         status: 'error',
-//         message: 'Invalid ID'
-//     });
-//     next();
-// }
+exports.getAllProducts = catchAsync(async (req, res, next) => {
+        // Api features are executing here to filter, sort, limit and paginate
+        const features = new ApiFeatures(Product.find(), req.query)
+                        .regex()
+                        .filter()
+                        .sort()
+                        .limit()
+                        .paginate();
 
-exports.getAllProducts = async (req, res) => {
-    const products = await Product.find()
-    res.status(200).json({
-        status: 'success',
-        results: products.length,
-        data: {
-            products
-        }
-    });
-}
+        // Execute query
+        const products = await features.query;
 
-exports.getProduct = async (req, res) => {
-    try {
-        const id = req.params.id;
-        const product = await Product.findById(id);
+        res.status(200).json({
+            status: 'success',
+            results: products.length,
+            data: {
+                products
+            }
+        });
+});
+
+exports.getProduct = catchAsync(async (req, res, next) => {
+
+        const product = await Product.findById(req.params.id);
+
+        // throwing error when product not matched
+        if (!product) return next(new AppError('No Product found with this ID', 404));
 
         res.status(200).json({
             status: 'success',
@@ -35,46 +40,39 @@ exports.getProduct = async (req, res) => {
                 product
             }
         });
-
-    } catch (error) {
-        res.status(404).json({
-            status: 'error',
-            message: error
-        });
-    }
-
-}
+});
 
 
-exports.createProduct = (req, res) => {
-    const newProduct = req.body;
-    products.push(newProduct);
-    fs.writeFile(`${__dirname}/../dev-data/data/all-data-trimRecords.json`, JSON.stringify(products), err => {
+exports.createProduct = catchAsync(async (req, res) => {
+        const product = await Product.create(req.body);
+
         res.status(201).json({
             status: 'success',
             data: {
-                product: newProduct
+                product
             }
         });
-    });
-}
+})
 
 
-exports.updateProduct = (req, res) => {
-    const id = req.params.id;
-
-    res.status(200).json({
+exports.updateProduct = catchAsync(async (req, res) => {
+        const product = await Product.findByIdAndUpdate(req.params.id, req.body, {
+            new: true,
+            runValidators: true
+        })
+        res.status(200).json({
         status: 'success',
         data: {
-            product: '<Updated product here..>'
+            product
         }
     });
-}
 
-exports.deleteProduct = (req, res) => {
+})
 
-    res.status(204).json({
-        status: 'success',
-        data: null
-    });
-}
+exports.deleteProduct = catchAsync(async (req, res) => {
+        await Product.findByIdAndDelete(req.params.id)
+        res.status(204).json({
+            status: 'success',
+            data: null
+        });
+})
