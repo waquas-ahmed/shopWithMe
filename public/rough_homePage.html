@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <link rel="stylesheet" href="./css/styling.css">
+</head>
+
+<body>
+    <header class="header-class">
+        <section class="header-title-line">
+            <figure class="image--logo">
+                <img src="./img/webpage/logo.jpg" alt="Shop Here Logo">
+            </figure>
+            <h1 class="title-website">shopHere</h1>
+            <!-- https://www.windeln.de/ -->
+
+            <!-- <button class="menu-button">
+                <div class="menu-icon"></div>
+            </button> -->
+        </section>
+        <!-- <nav>
+            <ul>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Forum</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav> -->
+    </header>
+    <div class="nav nav--user">
+        <!-- <a href="#" class="nav__el nav__el--logout">LogOut</a>
+        <a href="#" class="nav__el nav__el--flex">
+            <img src="./img/users/user-1.jpg" alt="User photo" class="nav__user-img" />
+            <span><b>hey! </b> Jonas</span>
+        </a> -->
+
+        <button class="nav__el--layout nav__el--login">Log in</button>
+        <button class="nav__el--layout nav__el-signup">Sign up</button>
+    </div>
+</body>
+
+</html>
+
+
+<ul>
+    <li><a href="#">
+            <div class="product--results">
+                <img src="https://st.mngbcn.com/rcs/pics/static/T4/fotos/S20/47053257_TG.jpg?ts=1669793582953"
+                    alt="first product" width="220px" height="210px" />
+                <div class="product__name">
+                    <span>Slim-fit jeans</span>
+                </div>
+                <div class="product__price">
+                    <span>Rs. 345.00</span>
+                </div>
+                <div class="product__availability">
+                    In Stock
+                </div>
+            </div>
+        </a>
+    </li>
+
+</ul>
+
+<!--
+discount and off
+    arrayData.forEach(el=>{
+    let temp;
+    let discount, discountPrice;
+    let indexOf = el.price.slice(3).indexOf(',');
+    let tempPrice = (el.price.slice(3).replace(',','')*1)
+    if (el.price.slice(3).replace(',','')*1 > 3000) {
+        discount = Math.floor(Math.random() * (50 - 40 + 1) + 40);
+        discountPrice = parseInt(discount * tempPrice/100)
+        temp = (tempPrice - discountPrice).toString()
+        temp = temp.slice(0, indexOf) + "," + temp.slice(indexOf);
+    }
+    if (el.price.slice(3).replace(',','')*1 > 1000 && el.price.slice(3).replace(',','')*1 <= 3000) {
+         discount = Math.floor(Math.random() * (30 - 20 + 1) + 20);
+        discountPrice = parseInt(discount * tempPrice/100)
+        temp = (tempPrice - discountPrice).toString()
+        temp = temp.slice(0, indexOf) + "," + temp.slice(indexOf);
+
+    }
+    if (el.price.slice(3).replace(',','')*1 < 1000) {
+        discount = Math.floor(Math.random() * (10 - 1 + 1) + 1);
+        discountPrice = parseInt(discount * tempPrice/100)
+        temp = (tempPrice - discountPrice).toString()
+
+
+    }
+    el.discountOff = discount + '% off'
+    el.discountPrice = 'Rs.'+temp
+})
+ -->

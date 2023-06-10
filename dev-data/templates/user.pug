@@ -1,0 +1,58 @@
+main
+    div(id="main--container__user")
+        nav(class="user--view__menu")
+            div(class="normal--user__menu")
+                ul
+                    li
+                        a(href="#")
+                            span settings
+                    li
+                        a(href="#")
+                            span my bookings
+                    li
+                        a(href="#")
+                            span my reviews
+                    li
+                        a(href="#")
+                            span billing
+                    li
+                        a(href="#")
+                            span settings
+            div(class="admin__menu")
+                h3 Admin
+                ul
+                    li
+                        a(href="#")
+                            span manage product
+                    li
+                        a(href="#")
+                            span manage users
+                    li
+                        a(href="#")
+                            span manage reviews
+        div(class="user__form")
+            div(class="user--nameEmail__settings")
+                h2 YOUR ACCOUNT SETTINGS
+                form(action="#")
+                    div(class="user--form__group")
+                        label(for="name", class="user--form__label") Name
+                        input#name(type="ext", class="user--form__label", value="My Name")
+                    div(class="user--form__group")
+                        label(for="email", class="user--form__label") Email Address
+                        input#email(type="email", class="user--form__label", value="your-email@gmail.com")
+                    div(class="user--form__button")
+                        button Save Settings
+            div(class="user--password__settings")
+                h2 YOUR PASSWORD SETTINGS
+                form(action="#")
+                    div(class="user--CurrentPassword__settings")
+                        label(for="password-current", class="password__current") Current password
+                        input#password-current(type="password", class="password__current", placeholder="*****")
+                    div(class="user--Password__settings")
+                        label.password(for="password") Password
+                        input#password(type="password", class="password__current", placeholder="*****")
+                    div(class="user--ConfirmPassword__settings")
+                        label(for="password-confirm", class="confirm__current") Confirm password
+                        input#password-confirm(type="password", class="confirm__current", placeholder="*****")
+                    div(class="user--form__button")
+                        button Save Password

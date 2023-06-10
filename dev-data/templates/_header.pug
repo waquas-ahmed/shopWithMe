@@ -1,0 +1,54 @@
+header.main--header
+    div(class="header--main__box")
+        div(class="header--top__look")
+        div(class="header--info__inside")
+            .logo--container
+                a.logo--clickable(href="#")
+                    img(src="./img/webpage/logoPage.jpg", alt="website logo")
+            .search--container
+                form(action="#")
+                    div(class="header--search__field")
+                        input.search--bar(type="text", placeholder="what you are looking!!", required)
+                        select(name="category", id="category__selection", required)
+                            option(value=) Select
+                            option(value="men") Men
+                            option(value="women") Women
+                            option(value="boys") Boys
+                            option(value="girls") Girls
+                    button(class="search--field__button", type="submit") GO
+            div(class="user--details__container")
+                a.login--button(href="#") Login
+                a.signup--button(href="#")
+                    span SignUp
+                //- //
+                //-     <a href="#" class="logout--button">LogOut</a>
+                //-     <a href="#" class="user--image__clickable">
+                //-     <img src="./img/users/user-1.jpg" alt="user photo">
+                //-     <span class="user--name">jonas</span>
+                //-     </a>
+        div(class="header--nav__navigation")
+            ul
+                li
+                    a(href="#")
+                        span Home
+                li
+                    a(href="#")
+                        span All Category
+                li
+                    a(href="#")
+                        span Women
+                li
+                    a(href="#")
+                        span Men
+                li
+                    a(href="#")
+                        span Boys
+                li
+                    a(href="#")
+                        span Girls
+                li
+                    a(href="#")
+                        span Contact
+                li
+                    a(href="#")
+                        span About
