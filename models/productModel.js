@@ -41,7 +41,29 @@ const productSchema = new mongoose.Schema({
             message: 'Discount price ({VALUE}) should be below regular price'
         }
     },
-    slug: String
+    slug: String,
+    ratingAverage: {
+        type: Number,
+        default: 4.8,
+        min: [1, 'Raing should have more than 1.0'],
+        max: [5, 'Raing should have less than 5.0'],
+    },
+    ratingQuantity: {
+        type: Number,
+        default: 0
+    },
+},
+{
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true }
+});
+
+// virtual populate
+
+productSchema.virtual('reviews', {
+    ref: 'Review',
+    foreignField: 'product',
+    localField: '_id'
 });
 
 productSchema.pre('save', function(next) {

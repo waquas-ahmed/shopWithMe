@@ -6,7 +6,8 @@ class ApiFeatures {
     }
     regex() {
          // 0) Filtering on the basis of search term
-         if (this.queryStr.searchTerms && this.queryStr.genderCategory) {
+         console.log(this.queryStr)
+         if ((this.queryStr.searchTerms && this.queryStr.genderCategory) || this.queryStr.searchTerms) {
             this.query = this.query.find(
                 {
                     name: {

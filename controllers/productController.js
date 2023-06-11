@@ -7,13 +7,14 @@ const AppError = require('../utility/appError');
 const { match } = require('assert');
 
 exports.getAllProducts = catchAsync(async (req, res, next) => {
+    // console.log('hey ', req.user.name);
         // Api features are executing here to filter, sort, limit and paginate
         const features = new ApiFeatures(Product.find(), req.query)
-                        .regex()
-                        .filter()
-                        .sort()
-                        .limit()
-                        .paginate();
+        .filter()
+        .regex()
+        .sort()
+        .limit()
+        .paginate();
 
         // Execute query
         const products = await features.query;
@@ -29,7 +30,7 @@ exports.getAllProducts = catchAsync(async (req, res, next) => {
 
 exports.getProduct = catchAsync(async (req, res, next) => {
 
-        const product = await Product.findById(req.params.id);
+        const product = await Product.findById(req.params.id).populate('reviews');
 
         // throwing error when product not matched
         if (!product) return next(new AppError('No Product found with this ID', 404));
