@@ -31,7 +31,7 @@ const productSchema = new mongoose.Schema({
         default: false
     },
     washCare: Array,
-    discountOff: String,
+    discountOff: Number,
     discountPrice: {
         type: Number,
         validate: {

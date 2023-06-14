@@ -6,7 +6,6 @@ class ApiFeatures {
     }
     regex() {
          // 0) Filtering on the basis of search term
-         console.log(this.queryStr)
          if ((this.queryStr.searchTerms && this.queryStr.genderCategory) || this.queryStr.searchTerms) {
             this.query = this.query.find(
                 {
@@ -59,7 +58,7 @@ class ApiFeatures {
     paginate() {
         // 4) Pagination
         const page = this.queryStr.page * 1 || 1;
-        const limit = this.queryStr.limit * 1 || 100;
+        const limit = this.queryStr.limit * 1 || 12;
         const skip = (page - 1) * limit;
         this.query = this.query.skip(skip).limit(limit);
 
