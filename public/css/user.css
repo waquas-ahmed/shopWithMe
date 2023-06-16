@@ -1,7 +1,3 @@
-body {
-    background-color: aqua;
-}
-
 #main--container__user {
     display: flex;
     width: 900px;
@@ -13,6 +9,10 @@ body {
     border-radius: 10px;
 }
 
+/* body {
+    width: 1300px;
+    margin: auto;
+} */
 
 .user--view__menu {
     width: 30%;

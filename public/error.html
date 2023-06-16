@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/homepage-content.css">
     <link rel="stylesheet" href="./css/footer.css">
-    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/error.css">
+    <link rel="icon" type="image/gif" href="./img/webpage/fav-icon.png">
 </head>
 
 <body>
@@ -25,20 +26,26 @@
                 <div class="search--container">
                     <form action="#">
                         <div class="header--search__field">
-                            <input type="text" class="search--bar" placeholder="what you are looking!!">
-
+                            <input type="text" class="search--bar" placeholder="what you are looking!!" required>
+                            <select name="category" id="category__selection" required>
+                                <option value="">Select</option>
+                                <option value="men">Men</option>
+                                <option value="women">Women</option>
+                                <option value="boys">Boys</option>
+                                <option value="girls">Girls</option>
+                            </select>
                         </div>
                         <button class="search--field__button" type="submit">GO</button>
                     </form>
                 </div>
                 <div class="user--details__container">
-                    <!-- <a href="#" class="login--button">Login</a>
-                    <a href="#" class="signup--button"><span>SignUp</span></a> -->
-                    <a href="#" class="logout--button">LogOut</a>
+                    <a href="#" class="login--button">Login</a>
+                    <a href="#" class="signup--button"><span>SignUp</span></a>
+                    <!-- <a href="#" class="logout--button">LogOut</a>
                     <a href="#" class="user--image__clickable">
                         <img src="./img/users/user-1.jpg" alt="user photo">
                         <span class="user--name">jonas</span>
-                    </a>
+                    </a> -->
                 </div>
             </div>
             <div class="header--nav__navigation">
@@ -72,25 +79,13 @@
         </div>
     </header>
     <main>
-        <div id="main--container__login">
-            <div class="login__form">
-                <div class="login--form__top">
-                    <a href="/">❌</a>
-                    <h2>LOG INTO YOUR ACCOUNT</h2>
-                </div>
-                <form action="#">
-                    <div class="form__group">
-                        <label for="email" class="form__label">Email address</label>
-                        <input type="email" class="form__label" id="email" placeholder="your-email@gmail.com">
-                    </div>
-                    <div class="form__group">
-                        <label for="password" class="form__label">Password</label>
-                        <input type="password" class="form__label" id="password" placeholder="***********">
-                    </div>
-                    <div class="form__button">
-                        <button>Login</button>
-                    </div>
-                </form>
+        <div class="error__container">
+            <div class="error__title">
+                <h2 class="error__heading">Uh oh! Something went wrong!!</h2>
+                <h2 class="error__emoji">❌</h2>
+            </div>
+            <div class="error__message">
+                <p>No results found, please search again.</p>
             </div>
         </div>
     </main>

@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+/* body {
+    width: 1300px;
+    margin: auto;
+} */
+
 :root {
     --HEADER-BGCOLOR: #cdcdcd;
     --HEADER-COLOR: #333;

@@ -6,6 +6,11 @@
     align-items: center;
 }
 
+/* body {
+    width: 1300px;
+    margin: auto;
+} */
+
 .login__form {
     height: 430px;
     background-color: wheat;
@@ -15,6 +20,18 @@
     border-radius: 10px;
 }
 
+.login--form__top {
+    margin-top: 10px;
+}
+
+.login--form__top a {
+    /* display: flex;
+    justify-content: end; */
+    padding: 7px;
+    margin-left: 505px;
+    text-decoration: none;
+}
+
 .login__form h2 {
     height: 15%;
     display: grid;
@@ -22,7 +39,7 @@
 }
 
 form {
-    height: calc(100% - 15%);
+    /* height: calc(100% - 15%); */
     width: 100%;
 }
 

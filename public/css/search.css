@@ -1,8 +1,14 @@
-#main--container {
+#main__search--container {
+    /* min-height: 80%; */
     display: flex;
     line-height: 1.5;
     font-family: Open Sans, Helvetica Neue, Helvetica, Roboto, sans-serif;
 }
+
+/* body {
+    width: 1300px;
+    margin: auto;
+} */
 
 .pannel__height {
     min-height: 50vh;
@@ -83,6 +89,7 @@
 .results__counts span {
     font-style: italic;
     font-weight: 600;
+    font-size: 18px
 }
 
 .results__container {
@@ -130,7 +137,7 @@
 
 .product__name {
     margin-bottom: 20px;
-    font-size: 15px;
+    font-size: 10px;
     font-style: italic;
 }
 

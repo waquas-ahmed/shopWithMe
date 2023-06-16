@@ -6,6 +6,11 @@
     align-items: center;
 }
 
+/* body {
+    width: 1300px;
+    margin: auto;
+} */
+
 .signup__form {
     height: 730px;
     background-color: wheat;

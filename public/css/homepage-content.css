@@ -3,6 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+/*
+body {
+    width: 1300px;
+    margin: auto;
+} */
 
 #main--container {
     width: 100vw;
@@ -49,7 +54,7 @@
 }
 
 .first--section__infineMoving li {
-    width: 250px;
+    width: 258px;
     height: 250px;
     display: flex;
     align-items: center;
@@ -76,7 +81,7 @@
 }
 
 .first--section__infineMoving li a:hover {
-    transform: translateZ(15px);
+    transform: translateZ(6px);
 }
 
 .first--section__infineMoving li a img {
@@ -150,6 +155,11 @@
     justify-content: center;
 }
 
+.second--section__todayDeal img {
+    border-radius: 2px;
+    margin: auto;
+}
+
 .todays--deal__withOff {
     margin: 10px 0;
 }
@@ -165,7 +175,7 @@
 
 .deal--of__day {
     font-weight: 700;
-    color: #CC0C39;
+    color: #22af21;
 }
 
 .product--card .product--card__title {

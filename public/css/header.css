@@ -4,9 +4,14 @@
     box-sizing: border-box;
 }
 
+/* body {
+    width: 1300px;
+    margin: auto;
+} */
+
 .main--header {
     width: 100%;
-    background-color: #979797bf;
+    background-color: #83a2ffbf;
 }
 
 .header--main__box {
@@ -92,15 +97,19 @@
 .user--details__container .logout--button {
     margin-right: 1vw;
     text-decoration: none;
+    cursor: pointer;
     color: black;
 }
 
 .user--details__container .logout--button:hover,
-.user--details__container .user--image__clickable:hover,
 .login--button:hover,
 .signup--button:hover {
     transform: scale(1.15);
     transition: all 0.5s;
+}
+.user--details__container .user--image__clickable:hover {
+    transform: scale(1.05);
+    transition: all 1s;
 }
 
 .user--details__container .user--image__clickable {
