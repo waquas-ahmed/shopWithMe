@@ -1,0 +1,65 @@
+extends base
+
+include _reviewCard
+
+block content
+    main
+        div(id="main--container__details")
+            div(class="detials--main__container")
+                div(class="main__image")
+                    img(src=`${productPage.image}`, alt=`${productPage.name}`)
+                div(class="other--main__content")
+                    div(class="detail--product__name")
+                        span= productPage.name
+                    div(class="detail--product__brand")
+                        span Brand:
+                            p= productPage.brand
+                    div(class="detail--product__price")= `Rs: ${productPage.discountPrice}`
+                    div(class="detail--product__offer")
+                        span(class="off__perc")= `${productPage.discountOff}% off`
+                        span= ` on  `
+                        span(class="strike__price")= ` Rs: ${productPage.price}`
+                    div(class="detail--product__availbillity")
+                        span In Stock
+                    div(class="detail--product__addToCard")
+                        a(href="#")
+                            | add to cart
+            div(class="description__container container__align")
+                h2(class="description__heading content__heading") Description
+                p(class="desc__para")= productPage.description[1]
+                ul(class="desc--in__bullets")
+                    each bullet in productPage.description[0]
+                        li
+                            span= bullet
+
+            div(class="conposition__container container__align")
+                h2(class="comp__heading content__heading") Composition and care guidelines
+                span(class="composition__content")= Object.values(productPage.composition)
+            div(class="conposition__container container__align")
+                h2(class="comp__heading content__heading") Washing Care
+                ul(class="desc--in__bullets styling_washing--care")
+                    each washBullet in productPage.washCare
+                        li
+                            span= washBullet
+            h2(class="review--section__heading") Customer Reviews
+            div(class="adding--review__form")
+                p(class="adding--reviewbox__heading") Add your review here
+                img(src="/img/webpage/right-arrow.png", alt='', width="100px", height="40px")
+                if user
+                    form(action="#", id="adding__review", userId=`${user.id}`, productID=`${productPage.id}`)
+                        div(class="review__title")
+                            label(for="review--top__title" class="label__align") Review Title
+                            input(type="text", id="review--top__title", placeholder="place your review title")
+                        div(class="review__description")
+                            textarea(type="text", id="review__description", placeholder="Add your review", rows="4")
+                        div(class="review__rating")
+                            label(for="quantity" class="label__align") Rating Quantity (between 1 and 5):
+                            input#rating(type="number", name="quantity", min="1", max="5")
+
+                        div(class="submit--review__button")
+                            button Add Your Review
+                else
+                    h3.login--before__adding Login Before Adding Review
+            div(class="all--product__reviews")
+                each review in productPage.reviews
+                    +reviewCard(review)

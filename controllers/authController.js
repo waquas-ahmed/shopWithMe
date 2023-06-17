@@ -164,7 +164,7 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
 
     // 2) if user is there then will compare the current input password
     if (!(await user.correctPassword(req.body.passwordCurrent, user.password))) {
-        return next(new AppError('Your password is incorrect!! Please check that', 401))
+        return next(new AppError('Your current password is incorrect!! Please check that', 401))
     }
 
     // 3) if input password is correct then set the new one with confirm password
@@ -209,7 +209,7 @@ exports.isSignedIn = catchAsync(async (req, res, next) => {
 
         // 2) check the user is there or not in the Database
         const currentUser = await User.findById(decoded.id);
-        if(!currentUser) next();
+        if(!currentUser) return next();
 
         // 3) There is logged in user
          req.userIs = currentUser;

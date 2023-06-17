@@ -1,0 +1,56 @@
+header.main--header
+    div(class="header--main__box")
+        div(class="header--top__look")
+        div(class="header--info__inside")
+            .logo--container
+                a.logo--clickable(href="/")
+                    img(src="/./img/webpage/logoPage.jpg", alt="website logo")
+            .search--container
+                form(action="/search?page=1")
+                    div(class="header--search__field")
+                        input.search--bar(type="text", placeholder="what you are looking!!", required, name='searchTerms')
+                        select(name="genderCategory", id="category__selection", required)
+                            option(value="") Select
+                            //- option(value="") All
+                            option(value="men") Men
+                            option(value="women") Women
+                            option(value="boys") Boys
+                            option(value="girls") Girls
+                    button(class="search--field__button", type="submit") GO
+            div(class="user--details__container")
+                if user
+                    a.logout--button LogOut
+                    a(href="/myaccount", class="user--image__clickable")
+                        img(src=`/img/users/${user.photo}`, alt=`${user.name}`)
+                        span.user--name= user.name
+                else
+                    a.login--button(href="/login") Login
+                    a.signup--button(href="#")
+                        span SignUp
+
+        div(class="header--nav__navigation")
+            ul
+                li
+                    a(href="/")
+                        span Home
+                li
+                    a(href="/search?page=1")
+                        span All Category
+                li
+                    a(href="/search?genderCategory=women&page=1")
+                        span Women
+                li
+                    a(href="/search?genderCategory=men&page=1")
+                        span Men
+                li
+                    a(href="/search?genderCategory=boys&page=1")
+                        span Boys
+                li
+                    a(href="/search?genderCategory=girls&page=1")
+                        span Girls
+                li
+                    a(href="#")
+                        span Contact
+                li
+                    a(href="#")
+                        span About

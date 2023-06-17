@@ -1,0 +1,70 @@
+extends base
+
+block content
+    main
+      div(id="main__search--container")
+        div(class="left--pannel__categories pannel__height")
+          div(class="category__head")
+            h3 All Category
+          div(class="all__category")
+            div(class="category__1 category__align")
+              a(href="/search?genderCategory=men&page=1") Men
+              p (
+                span= menAllProducts.length
+                | )
+            div(class="category__2 category__align")
+              a(href="/search?genderCategory=women&page=1") Women
+              p (
+                span= womenAllProducts.length
+                | )
+            div(class="category__3 category__align")
+              a(href="/search?genderCategory=boys&page=1") Boys
+              p (
+                span= boysAllProducts.length
+                | )
+            div(class="category__4 category__align")
+              a(href="/search?genderCategory=girls&page=1") Girls
+              p (
+                span= girlsAllProducts.length
+                | )
+            //- div(class="category__5 category__align")
+            //-   a(href="#") Infant
+            //-   p (
+            //-     span 72
+            //-     | )
+        div(class="search__results pannel__height")
+          div(class="results__sorting")
+            a(href="#")
+              span Click Here On Price Sorting
+          div(class="results__counts")
+            p Total Products found:
+              span= `  ${totalProducts}`
+          div(class="results__container")
+            .product-listing
+              ul
+                each result in productResults
+                  li
+                    a(href=`/product/${result.slug}/p/${result.productId}`, class="href--style__link")
+                      .product--results
+                        img(src=`${result.image}`, alt=`${result.name}`, width="220px", height="210px")
+                        div(class="product__details")
+                          div(class="product__name")
+                            h2= result.name
+                          div(class="product__price")
+                            span= `Rs. ${result.discountPrice}`
+                          div(class="product__availability")
+                            | In Stock
+
+          div(class="results__pagination")
+            div(class="item--sequence__displayed")
+              p
+                | Items:
+                -const pg = paginationUrl.split('page=')[1]
+                -const lastPage = pg * 12 <= totalProducts ? pg * 12 : totalProducts
+                if (pg !== undefined)
+                  span(class="order__sequence")= ` ${(pg - 1) * 12 + 1} - ${lastPage}`
+                span(class="total__products")= `  of ${totalProducts}`
+            div(class="pagination__bar")
+              - for (page = 1; page <= totalNumberOfPages; page++) {
+                a(href=`${paginationUrl.replace(/page=.+/, `page=${page}`)}`, class=`page__${page} page__align`)= page
+              - }

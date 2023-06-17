@@ -1,0 +1,30 @@
+extends base
+
+block content
+    main
+        #main--container
+            div(class="front__image")
+                img(src="./img/webpage/front_first_image.jpg", alt="front image", width="900px", height="450px")
+            div(class="container--products__infinite")
+                ul(class="first--section__infineMoving")
+                    each productTshirt in tshirtProducts
+                        li
+                            a(href=`/product/${productTshirt.slug}/p/${productTshirt.productId}`)
+                                .product--card
+                                    img(src=`${productTshirt.image}`, alt=`${productTshirt.name}`)
+                                    h5.gender--category=`For ${productTshirt.genderCategory}`
+                                    h4(class="product--card__title")= productTshirt.name
+
+            div(class="container--products__interestedIn")
+                div(class="interested--product__title")
+                    h2 Exlusive&apos;s Offers
+                ul(class="second--section__todayDeal")
+                    each offerProduct in exlusiveOffers
+                            li
+                                a(href=`/product/${offerProduct.slug}/p/${offerProduct.productId}`)
+                                    .product--card
+                                        img(src=`${offerProduct.image}`, alt=`${offerProduct.name}`, width="220px", height="210px")
+                                        div(class="todays--deal__withOff")
+                                            span.discount= `${offerProduct.discountOff}% off`
+                                            span(class="deal--of__day")   In Stock
+                                        h4(class="product--card__title")= offerProduct.name
