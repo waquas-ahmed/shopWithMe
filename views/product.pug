@@ -43,23 +43,33 @@ block content
                             span= washBullet
             h2(class="review--section__heading") Customer Reviews
             div(class="adding--review__form")
-                p(class="adding--reviewbox__heading") Add your review here
-                img(src="/img/webpage/right-arrow.png", alt='', width="100px", height="40px")
                 if user
-                    form(action="#", id="adding__review", userId=`${user.id}`, productID=`${productPage.id}`)
-                        div(class="review__title")
-                            label(for="review--top__title" class="label__align") Review Title
-                            input(type="text", id="review--top__title", placeholder="place your review title")
-                        div(class="review__description")
-                            textarea(type="text", id="review__description", placeholder="Add your review", rows="4")
-                        div(class="review__rating")
-                            label(for="quantity" class="label__align") Rating Quantity (between 1 and 5):
-                            input#rating(type="number", name="quantity", min="1", max="5")
+                    div.review__box
+                        p(class="adding--reviewbox__heading") Add your review here
 
-                        div(class="submit--review__button")
-                            button Add Your Review
+                            form(action="#", id="adding__review", userId=`${user.id}`, productID=`${productPage.id}`)
+                                div(class="review__title")
+                                    label(for="review--top__title" class="label__align") Review Title
+                                    input(type="text", id="review--top__title", placeholder="place your review title")
+                                div(class="review__description")
+                                    textarea(type="text", id="review__description", placeholder="Add your review", rows="4")
+                                div(class="review__rating")
+                                    label(for="quantity" class="label__align") Rating Quantity (between 1 and 5):
+                                    input#rating(type="number", name="quantity", min="1", max="5")
+
+                                div(class="submit--review__button")
+                                    button Add Your Review
                 else
                     h3.login--before__adding Login Before Adding Review
+                div.review__rating
+                    div.average__rating Average Ratings:
+                        -const number = (productPage.ratingAverage * 100)
+                        -const finalCOnvertedTwoDecimalPoint= Math[number < 0 ? 'ceil' : 'floor'](number) / 100
+                        p#rating__text= finalCOnvertedTwoDecimalPoint
+                    div.review__count= `(${productPage.ratingQuantity})`
             div(class="all--product__reviews")
                 each review in productPage.reviews
                     +reviewCard(review)
+                //- -for(let review = productPage.reviews.length; review > 0; i--) {
+                    +reviewCard(productPage.reviews[review])
+                //- -}

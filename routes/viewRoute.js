@@ -9,6 +9,6 @@ router.get('/', viewController.getHomepage);
 router.get('/product/:slug/p/:productId', viewController.getProductpage);
 router.get('/search', viewController.getSearchResultpage);
 router.get('/login', viewController.getLoginForm);
-
+router.get('/myaccount', viewController.getAccount);
 
 module.exports = router;

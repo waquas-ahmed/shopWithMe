@@ -1,0 +1,18 @@
+extends base
+
+block content
+    main
+        div(id="main--container__login")
+            div(class="login__form")
+                div(class="login--form__top")
+                    a(href="/") ❌
+                    h2 LOG INTO YOUR ACCOUNT
+                form(class='login--form__box', action="#")
+                    div(class="form__group")
+                        label(for="email", class="form__label") Email address
+                        input#email(type="email", class="form__label", placeholder="your-email@gmail.com" required)
+                    div(class="form__group")
+                        label(for="password", class="form__label") Password
+                        input#password(type="password", class="form__label", placeholder="***********" required)
+                    div(class="form__button")
+                        button Login
