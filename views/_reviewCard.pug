@@ -1,0 +1,21 @@
+mixin reviewCard(review)
+    .review--card
+        div(class="logo--with__allStars")
+            img(class="double__quote", src="/img/webpage/review_doubleQuote.png", alt='Website Logo', width="25")
+            div(class="star__container")
+                -for(let i=1; i <= 5; i++) {
+                    if (i <= review.reviewRating)
+                        span.fa.fa-star.fa-2x.checked
+                    else
+                        span.fa.fa-star.fa-2x.unchecked
+                -}
+        div(class="user__details")
+            img(class="user__photo", src=`/img/users/${review.user.photo}`, alt=`${review.user.name}`, width="50")
+            h3= review.user.name
+        h4(class="review__title")= review.reviewTitle
+        p(class="review__description")= review.reviewDescription
+        -const objectDate = new Date
+        -const day = objectDate.getDate();
+        -const month = objectDate.getMonth() < 10 ? `0${objectDate.getMonth() + 1}` : objectDate.getMonth() + 1;
+        -const year = objectDate.getFullYear();
+        h4(class="review__date")= `${day}-${month }-${year}`

@@ -66,6 +66,7 @@
 
 .user--nameEmail__settings {
     margin-bottom: 100px;
+    margin: 20px 0;
 }
 
 .user--form__group {
@@ -104,8 +105,10 @@
     transition: all 0.9s;
 }
 
+
 .user--password__settings>h2 {
     margin-bottom: 60px;
+    margin-top: 50px;
 }
 
 .user--password__settings>form>div {
