@@ -47,16 +47,21 @@ const createSendToken = (user, status, res) => {
 
 exports.signup = catchAsync(async(req, res) => {
 
-    // const newUser = await User.create(req.body);
+    // console.log(req.body)
+    const newUser = await User.create(req.body);
 
     // will pass limited fields to the user so that user won;t add any role
-    const newUser = await User.create({
-        name: req.body.name,
-        email: req.body.email,
-        password: req.body.password,
-        passwordConfirm: req.body.passwordConfirm,
-        photo: req.body.photo
-    });
+    // const newUser = await User.create({
+    //     name: req.body.name,
+    //     email: req.body.email,
+    //     password: req.body.password,
+    //     passwordConfirm: req.body.passwordConfirm,
+    //     photo: req.body.photo
+    // });
+
+    // email sending part
+    const url = 'http://127.0.0.1:8000/myaccount';
+    await new sendEmail(newUser, url).sendWelcome();
 
     createSendToken(newUser, 200, res);
 });
@@ -218,7 +223,6 @@ exports.isSignedIn = catchAsync(async (req, res, next) => {
     }
     next();
 });
-
 
 exports.restrictTo = (roleCurrent) => {
     return (req, res, next) => {

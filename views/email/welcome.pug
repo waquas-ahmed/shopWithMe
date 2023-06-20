@@ -1,0 +1,17 @@
+extends baseEmail
+
+block content
+    p= `Hi ${firstName},`
+    p= `${subject}, we're glad to have you 🎉🙏`
+    p We're all a nicest familiy here, so make sure to click on the below button to directly head to the shopWithMe- Your account page !
+    table.btn.btn-primary(role='presentation', border='0', cellpadding='0', cellspacing='0')
+        tbody
+            tr
+                td(align='left')
+                    table(role='presentation', border='0', cellpadding='0', cellspacing='0')
+                        tbody
+                            tr
+                                td
+                                    a(href=`${url}`, target='shopWithMe') Our Website User Account
+    p If you need any help with booking the products, please don't hesitate to visit on the contact section!
+    p - MD. WAQUAS
