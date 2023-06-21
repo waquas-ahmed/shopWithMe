@@ -47,7 +47,7 @@ const createSendToken = (user, status, res) => {
 
 exports.signup = catchAsync(async(req, res) => {
 
-    // console.log(req.body)
+    if(req.file) req.body.photo = req.file.filename;
     const newUser = await User.create(req.body);
 
     // will pass limited fields to the user so that user won;t add any role

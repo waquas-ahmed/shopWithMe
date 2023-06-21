@@ -25,3 +25,11 @@
     place-content: center;
     margin-top: 50px;
 }
+
+.form__group .form--photo__label {
+    width: 250px;
+    height: 40px;
+    font-size: large;
+    font-weight: 400;
+    margin: 8px 215px 0 0;
+}

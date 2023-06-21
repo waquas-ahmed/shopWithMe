@@ -1,0 +1,25 @@
+extends base
+
+block content
+    main
+        div(id="main--container__signup")
+            div(class="signup__form")
+                h2 CREATE A NEW ACCOUNT
+                form(action="#" class="user--signup__form")
+                    div(class="form__group")
+                        label(for="name", class="form__label") Your Name *
+                        input#name(type="text", class="form__label", placeholder="enter your name" required)
+                    div(class="form__group")
+                        label(for="email", class="form__label") Email address *
+                        input#email(type="email", class="form__label", placeholder="your-email@gmail.com" required)
+                    div(class="form__group")
+                        label(for="password", class="form__label") Password *
+                        input#password(type="password", class="form__label", placeholder="enter your password" required)
+                    div(class="form__group")
+                        label(for="confirm__password", class="form__label") Confirm Password *
+                        input#passwordConfirm(type="password", class="form__label", placeholder="re-enter the password" required)
+                    div(class="form__group")
+                        label(for="photos", class="form__label") Choose Your Photo
+                        input#photo(type="file", accept='image/*', class="form--photo__label" name="photo")
+                    div(class="form__button")
+                        button.signup__button Sign Up

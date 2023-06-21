@@ -29,7 +29,7 @@ block content
                     form(class="form--user__data", action="#")
                         div(class="user--form__group")
                             label(for="name", class="user--form__label") Name
-                            input#name(type="ext", class="user--form__label", value=`${user.name}`)
+                            input#name(type="text", class="user--form__label", value=`${user.name}`)
                         div(class="user--form__group")
                             label(for="email", class="user--form__label") Email Address
                             input#email(type="email", class="user--form__label", value=`${user.email}`)
@@ -37,7 +37,7 @@ block content
                             label(for="name", class="user--form__label") Photo
                             input#photo(type="file", accept='image/*', class="user--form__label", name="photo")
                         div(class="user--form__button")
-                            button Save Settings
+                            button.form--user__dataButton Save Settings
 
                 div(class="user--password__settings")
                     h2 YOUR PASSWORD SETTINGS
@@ -52,4 +52,4 @@ block content
                             label(for="password-confirm", class="confirm__current") Confirm password
                             input#password-confirm(type="password", class="confirm__current", placeholder="*****")
                         div(class="user--form__button")
-                            button Save Password
+                            button.form--user__passwordButton Save Password
