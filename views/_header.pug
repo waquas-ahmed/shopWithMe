@@ -1,6 +1,15 @@
 header.main--header
     div(class="header--main__box")
         div(class="header--top__look")
+            //- .website--top__logo
+                //- img(src="./img/webpage/head_logo.jpeg", alt="Shop With Me")
+            //- -const objectDate = new Date()
+            //- -const finalSplittedData = String(objectDate).split(' ')
+            //- -const day = objectDate.getDate();
+            //- -const month = objectDate.getMonth() < 10 ? `0${objectDate.getMonth() + 1}` : objectDate.getMonth() + 1;
+            //- -const year = objectDate.getFullYear();
+            //- .timeon--header__top= `${finalSplittedData.slice(0,4).join(' ')} `
+
         div(class="header--info__inside")
             .logo--container
                 a.logo--clickable(href="/")
@@ -25,7 +34,7 @@ header.main--header
                         span.user--name= user.name
                 else
                     a.login--button(href="/login") Login
-                    a.signup--button(href="#")
+                    a.signup--button(href="/signUp")
                         span SignUp
 
         div(class="header--nav__navigation")

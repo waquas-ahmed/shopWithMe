@@ -11,7 +11,7 @@
 
 .main--header {
     width: 100%;
-    background-color: #96a48ebf;
+    background-color: #9da1ffbf;
 }
 
 .header--main__box {
@@ -23,8 +23,31 @@
 
 .header--top__look {
     /* background-color: aliceblue; */
-    height: 25px;
+    height: 15px;
     background-image: linear-gradient(45deg, #000000c2, #818181);
+    display: flex;
+    justify-content: space-between;
+}
+
+.website--top__logo {
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    margin-left: 30px;
+}
+
+.website--top__logo img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.timeon--header__top {
+    color: white;
+    font-family: bold;
+    padding: 3px;
+    font-size: 20px;
+    word-spacing: 2px;
 }
 
 .header--info__inside {
