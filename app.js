@@ -9,6 +9,8 @@ const productRouter = require('./routes/productRoute');
 const userRouter = require('./routes/userRoute');
 const reviewRouter = require('./routes/reviewRoute');
 const viewRouter = require('./routes/viewRoute');
+const bookingRouter = require('./routes/bookingRoute');
+const addToCartRouter = require('./routes/addToCartRoute');
 const errorController = require('./controllers/errorController');
 const AppError = require('./utility/appError');
 
@@ -48,6 +50,8 @@ app.use('/', viewRouter);
 app.use('/api/v1/products', productRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/reviews', reviewRouter);
+app.use('/api/v1/bookings', bookingRouter);
+app.use('/api/v1/shopping', addToCartRouter);
 
 app.all('*', (req, res, next) => {
      next(new AppError(`Can not find this URL ${req.originalUrl} on the server`, 404));
