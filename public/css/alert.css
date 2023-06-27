@@ -19,3 +19,6 @@
   .alert--error {
     background-color: #eb4d4b;
   }
+  .alert--warn {
+    background-color: rgb(204, 133, 0);
+  }

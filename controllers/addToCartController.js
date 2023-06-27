@@ -5,6 +5,7 @@ const catchAsync = require('../utility/catchAsync');
 
 exports.createProductAddtocart = catchAsync(async (req, res, next) => {
     console.log(req.params.productId)
+    console.log(req.user.id)
     const addToCartProductAdded = await addToCart.create({ productId: req.params.productId, userId: req.user.id });
 
     res.status(201).json({

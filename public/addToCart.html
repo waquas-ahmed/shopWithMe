@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shop with me</title>
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/homepage-content.css">
+    <link rel="stylesheet" href="./css/searchPage.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/details.css">
+    <link rel="stylesheet" href="./css/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header class="main--header">
+        <div class="header--main__box">
+            <div class="header--top__look"></div>
+            <div class="header--info__inside">
+                <div class="logo--container">
+                    <a href="#" class="logo--clickable">
+                        <img src="./img/webpage/logoPage.jpg" alt="website logo">
+                    </a>
+                </div>
+                <div class="search--container">
+                    <form action="#">
+                        <div class="header--search__field">
+                            <input type="text" class="search--bar" placeholder="what you are looking!!">
+                        </div>
+                        <button class="search--field__button" type="submit">GO</button>
+                    </form>
+                </div>
+                <div class="user--details__container">
+                    <!-- <a href="#" class="login--button">Login</a>
+                    <a href="#" class="signup--button"><span>SignUp</span></a> -->
+                    <a href="#" class="logout--button">LogOut</a>
+                    <a href="#" class="user--image__clickable">
+                        <img src="./img/users/user-1.jpg" alt="user photo">
+                        <span class="user--name">jonas</span>
+                    </a>
+                </div>
+            </div>
+            <div class="header--nav__navigation">
+                <ul>
+                    <li>
+                        <a href="#"><span>Home</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span>All Category</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span>Women</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span>Men</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span>Boys</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span>Girls</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span>Contact</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span>About</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="main--container__cart">
+            <h2>This is Your Cart</h2>
+            <div class="addToCart">
+                <div class="image--in__cart">
+                    <img src="https://st.mngbcn.com/rcs/pics/static/T4/fotos/S20/47075960_TN.jpg?ts=1675695796791" alt="#">
+                </div>
+                <div class="name--price__quantity">
+                    <div class="price--name__cart">
+                        <h4>Carrot-fit jeans</h2>
+                        <p>Price/pc: Rs 2352</p>
+                    </div>
+                    <div class="total--in__cart">
+                        <label for="Quantity">Quantity</label>
+                        <input id="Quantity" type="number" name="quantity", min="1", max="10">
+                        <button class="remove--from__cart" href="api/v1/shopping/addToCart/6487fea3f6519170b430b0f2">Remove</button>
+                    </div>
+                </div>
+            </div>
+            <div class="addToCart">
+                <div class="image--in__cart">
+                    <img src="https://st.mngbcn.com/rcs/pics/static/T4/fotos/S20/47075960_TN.jpg?ts=1675695796791" alt="#">
+                </div>
+                <div class="name--price__quantity">
+                    <div class="price--name__cart">
+                        <h4>Carrot-fit jeans</h2>
+                        <p>Price/pc: Rs 2352</p>
+                    </div>
+                    <div class="total--in__cart">
+                        <label for="Quantity">Quantity</label>
+                        <input id="Quantity" type="number" name="quantity", min="1", max="10">
+                        <a class="remove--from__cart" href="api/v1/shopping/addToCart/6487fea3f6519170b430b0f2">Remove</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="payment--mode__session">
+                <button>Make Payment</button>
+            </div>
+        </div>
+    </main>
+    <footer class="footer--content">
+        <div class="customer__account">
+            <h1 class="webpage__name">shop with me</h1>
+            <a href="#">My Customer Account</a>
+        </div>
+        <div class="helper--onCustomer__concern">
+            <div class="concern--main__title">
+                <h2>We are here for you</h2>
+            </div>
+            <div class="concern__section">
+                <div class="footer__shop footer__align">
+                    <h3 class="title__shop">Shop</h3>
+                    <a href="#" class="contact">Contact</a>
+                    <a href="#" class="shipping--costs__delivery">Shipping costs & delivery</a>
+                    <a href="#" class="return">Return</a>
+                    <a href="#" class="brands">Our Brands</a>
+                    <a href="#" class="all_offers">Best Offers</a>
+                </div>
+                <div class="footer--social__media footer__align">
+                    <h3 class="title__shop">Social Media</h3>
+                    <a href="#" class="contact">Instagram</a>
+                    <a href="#" class="contact">Facebook</a>
+                    <a href="#" class="shipping--costs__delivery">Youtube</a>
+                    <a href="#" class="shipping--costs__delivery">Twitter</a>
+                </div>
+                <div class="footer__legal footer__align">
+                    <h3 class="title__shop">Legal</h3>
+                    <a href="#" class="contact">Privacy</a>
+                    <a href="#" class="contact">Terms & Conditions</a>
+                    <a href="#" class="shipping--costs__delivery">ShopWithMe Help Center</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

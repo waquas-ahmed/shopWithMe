@@ -1,0 +1,27 @@
+main
+    div(id="main--container__cart")
+        h2 This is Your Cart
+        .addToCart
+            div(class="image--in__cart")
+                img(src="https://st.mngbcn.com/rcs/pics/static/T4/fotos/S20/47075960_TN.jpg?ts=1675695796791", alt="#")
+            div(class="name--price__quantity")
+                div(class="price--name__cart")
+                    h4 Carrot-fit jeans
+                        p Price/pc: Rs 2352
+                        div(class="total--in__cart")
+                            label(for="Quantity") Quantity
+                            input#Quantity(type="number", name="quantity", ,, min="1", ,, max="10")
+                            a(class="remove--from__cart", href="api/v1/shopping/addToCart/6487fea3f6519170b430b0f2") Remove
+                        .addToCart
+                            div(class="image--in__cart")
+                                img(src="https://st.mngbcn.com/rcs/pics/static/T4/fotos/S20/47075960_TN.jpg?ts=1675695796791", alt="#")
+                            div(class="name--price__quantity")
+                                div(class="price--name__cart")
+                                    h4 Carrot-fit jeans
+                                        p Price/pc: Rs 2352
+                                        div(class="total--in__cart")
+                                            label(for="Quantity") Quantity
+                                            input#Quantity(type="number", name="quantity", ,, min="1", ,, max="10")
+                                            a(class="remove--from__cart", href="api/v1/shopping/addToCart/6487fea3f6519170b430b0f2") Remove
+                                        div(class="payment--mode__session")
+                                            button Make Payment

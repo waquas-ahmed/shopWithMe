@@ -1,0 +1,24 @@
+extends base
+
+block content
+    main
+        div(id="main--container__cart")
+            h2 This is Your Cart
+            form.addToCart__submission
+                if  cartProduct.length === 0
+                    h3.no--productIn__cart There is no Product in Your Cart!! Please Shop now...
+                else
+                    each product in cartProduct
+                        .addToCart(productid=`${product.productId.id}`)
+                            div(class="image--in__cart")
+                                img(src=`${product.productId.image}`, alt=`${product.productId.name}`)
+                            div(class="name--price__quantity")
+                                div(class="price--name__cart")
+                                    h4= `${product.productId.name}`
+                                    p= `Price/pc: Rs ${product.productId.discountPrice}`
+                                div(class="total--in__cart")
+                                    label(for="Quantity") Quantity
+                                    input#Quantity(type="number", name="quantity", min="1", max="10", value="1")
+                                    a(class="remove--from__cart", url=`api/v1/shopping/deleteFromCart/${product.id}`) Remove
+                div(class="payment--mode__session")
+                    button Make Payment
