@@ -8,8 +8,8 @@ const router = express.Router();
 router.get('/signUp', viewController.getSignupForm);
 
 router.use(authController.isSignedIn);
-// router.get('/', bookingController.createBookingCheckout, viewController.getHomepage);
-router.get('/', viewController.getHomepage);
+router.get('/', bookingController.createBookingCheckout, viewController.getHomepage);
+// router.get('/', viewController.getHomepage);
 router.get('/product/:slug/p/:productId', viewController.getProductpage);
 router.get('/search', viewController.getSearchResultpage);
 router.get('/login', viewController.getLoginForm);

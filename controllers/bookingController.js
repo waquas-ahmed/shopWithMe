@@ -1,6 +1,6 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const Product = require('../models/productModel');
-const AddToCart = require('../models/addToCartModel');
+const AddToCart = require('../models/cartModel');
 // const Booking = require('../models/bookingModel');
 const catchAsync = require('../utility/catchAsync');
 // const factory = require('./handlerFactory');
@@ -15,7 +15,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
     // // 2) create checkout session
     const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
-        success_url: `${req.protocol}://${req.get('host')}/?product=''&user=${req.user.id}&price=''`,
+        success_url: `${req.protocol}://${req.get('host')}/?products=${Object.keys(quantityObj).join()}&user=${req.user.id}`,
         cancel_url: `${req.protocol}://${req.get('host')}/mycart`,
         customer_email: req.user.email,
         client_reference_id: req.user.id,
@@ -63,9 +63,9 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
 exports.createBookingCheckout = catchAsync(async (req, res, next) => {
 
   // This is only the TEMPORARY because it is UNSECURE: everyone can make booking with paying.
-  // const { tour, user, price } = req.query;
-  // if(!tour && !user && !price) return next();
+  const { products, user } = req.query;
+  if(!products && !user) return next();
 
-  // // await Booking.create({tour, user, price});
-  // res.redirect(req.originalUrl.split('?')[0]);
+  // await Booking.create({tour, user, price});
+  res.redirect(req.originalUrl.split('?')[0]);
 });

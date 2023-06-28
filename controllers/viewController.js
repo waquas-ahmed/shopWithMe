@@ -1,6 +1,6 @@
 const catchAsync = require('../utility/catchAsync')
 const Product = require('../models/productModel');
-const addToCart = require('../models/addToCartModel');
+const addToCart = require('../models/cartModel');
 const ApiFeatures = require('../utility/apiFeatures');
 
 
@@ -12,7 +12,6 @@ exports.getHomepage = catchAsync(async (req, res) => {
     // exclusive offers which is more than 46% off
     const exlusiveOffers = await Product.find({ discountOff : { $gt : '46' }});
 
-    console.log(tshirtProducts)
     res.status(200).render('home', {
         title: 'Home Page',
         exlusiveOffers,

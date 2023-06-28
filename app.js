@@ -51,7 +51,7 @@ app.use('/api/v1/products', productRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/reviews', reviewRouter);
 app.use('/api/v1/bookings', bookingRouter);
-app.use('/api/v1/shopping', addToCartRouter);
+app.use('/api/v1/shoppings', addToCartRouter);
 
 app.all('*', (req, res, next) => {
      next(new AppError(`Can not find this URL ${req.originalUrl} on the server`, 404));
