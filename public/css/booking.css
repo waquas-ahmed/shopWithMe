@@ -1,0 +1,119 @@
+#main--container__booking {
+    min-height: 50vh;
+    width: 900px;
+    margin: auto;
+    border: 1px black solid;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #7dd56f, #28b487);
+}
+
+#main--container__booking h2 {
+    width: 900px;
+    display: grid;
+    place-content: center;
+    text-decoration: underline;
+    margin: 20px 0;
+}
+
+.all__Bookings {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.booking {
+
+    background-color: #dbb4ff;
+    width: 800px;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+.all--Products__info{
+    /* width: 500px;
+    margin: 10px auto;
+    border-radius: 10px;  */
+    margin-left: 15px;
+}
+
+.booked--product__details {
+    display: flex;
+    /* justify-content: space-evenly; */
+    margin-bottom: 10px;
+    /* flex-flow: row; */
+    /* column-gap: 41px;*/
+}
+
+.image--for__product {
+    width: 10%;
+}
+
+.image--for__product img {
+    width: 50px;
+    height: 50px;
+    margin-top: 5px;
+    border-radius: 3px;
+}
+
+
+.name--for__product {
+    width: 45%;
+}
+
+.price--for__product {
+    width: 15%;
+
+}
+
+.quantity--for__product {
+    width: 10%;
+
+}
+
+.totalAmount--for__product {
+    width: 15%;
+}
+
+.text__align {
+
+    margin-top: 15px;
+    border-right: 1px solid grey;
+    padding: 0 5px
+}
+
+.text__align:last-child {
+    border-right: none;
+}
+
+.paid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paid p {
+    font-weight: 700;
+    font-size: 20px;
+    color: #1f601d;
+}
+
+.paid img {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    margin-left: 6px;
+}
+
+.paid .date {
+    width: 50%;
+    padding-left: 10px;
+}
+
+.paid div {
+    width: 20%;
+    display: flex;
+}
+
+.paid .amount {
+    width: 30%;
+    padding-left: 75px;
+}

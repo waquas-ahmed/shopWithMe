@@ -19,6 +19,6 @@ block content
                                 div(class="total--in__cart")
                                     label(for="Quantity") Quantity
                                     input#Quantity(type="number", name="quantity", min="1", max="10", value="1")
-                                    a(class="remove--from__cart", url=`api/v1/shopping/deleteFromCart/${product.id}`) Remove
+                                    a(class="remove--from__cart", url=`api/v1/shoppings/deleteFromCart/${product.id}`) Remove
                 div(class="payment--mode__session")
                     button Make Payment

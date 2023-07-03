@@ -2,6 +2,7 @@ const catchAsync = require('../utility/catchAsync')
 const Product = require('../models/productModel');
 const addToCart = require('../models/cartModel');
 const ApiFeatures = require('../utility/apiFeatures');
+const Booking = require('../models/bookingModel')
 
 
 exports.getHomepage = catchAsync(async (req, res) => {
@@ -148,5 +149,17 @@ exports.getCart = catchAsync(async(req, res) => {
     res.status(200).render('mycart', {
         title: 'My Cart',
         cartProduct: allProductsInCart
+    });
+});
+
+exports.orderHistory = catchAsync(async(req, res) => {
+
+    const allProductsFromBooking = await Booking.find({userId: req.userIs.id});
+
+    // console.log(allProductsFromBooking)
+    // console.log(allProductsFromBooking.length)
+    res.status(200).render('bookings', {
+        title: 'Your Order History',
+        bookings: allProductsFromBooking
     });
 });

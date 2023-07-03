@@ -16,5 +16,6 @@ router.get('/login', viewController.getLoginForm);
 router.get('/myaccount', viewController.getAccount);
 
 router.get('/mycart', viewController.getCart);
+router.get('/orderHistory', viewController.orderHistory);
 
 module.exports = router;

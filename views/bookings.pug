@@ -1,0 +1,34 @@
+extends base
+
+block content
+    main
+        div(id="main--container__booking")
+            h2 Your Order History
+            .all__Bookings
+                if bookings.length > 0
+                    each booking in bookings
+                        .booking
+                            - let sum = 0
+                            - for (let i = 0; i < booking.productId.length; i++) {
+                                - sum = sum + (booking.productId[i].discountPrice *  booking.quantity[i])
+                                div(class="all--Products__info")
+                                    div(class="booked--product__details")
+                                        div(class="image--for__product")
+                                            img(src=`${booking.productId[i].image}`, alt=`${booking.productId[i].name}`)
+                                        div(class="name--for__product text__align")
+                                            h4= booking.productId[i].name
+                                        div(class="price--for__product text__align")
+                                            p= `Price: Rs ${booking.productId[i].discountPrice}`
+                                        div(class="quantity--for__product text__align")
+                                            p= `Qty: ${booking.quantity[i]}`
+                                        div(class="totalAmount--for__product text__align")
+                                            p= `Total: Rs ${booking.productId[i].discountPrice *  booking.quantity[i]}`
+                            - }
+                            .paid
+                                h5.date= `Purchased Date - ${String(new Date(booking.createdAt)).split(' ').slice(0, 5).join(' ').slice(0, -3)}`
+                                div
+                                    p PAID
+                                    img(src="/img/webpage/checkmark.png", alt="payment successful")
+                                h5.amount= `Total Amount - ${sum}`
+                else
+                    h3.no--productIn__cart There is no Booking history in Your Account!! Please Shop something...
