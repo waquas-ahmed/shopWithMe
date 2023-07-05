@@ -57,7 +57,11 @@ exports.getSearchResultpage = catchAsync(async (req, res) => {
     let productResults;
     let totalProducts;
     let totalNumberOfPages;
-    const paginationUrl = req.originalUrl;
+    let paginationUrl = req.originalUrl;
+    paginationUrl = paginationUrl.includes('page') ? paginationUrl : `${paginationUrl}&page=1`;
+
+    // check if page field is there in the query object or not
+    if (req.query && !req.query.page) req.query.page = '1';
 
     if (req.query.searchTerms && req.query.searchTerms.toLowerCase().includes('all') && req.query.genderCategory === 'all') {
         req.query.page = 1;
@@ -127,7 +131,7 @@ exports.getSearchResultpage = catchAsync(async (req, res) => {
 exports.getSignupForm = (req, res) => {
     res.status(200).render('signup', {
         title: 'Create your account!'
-    })
+    });
 }
 
 exports.getLoginForm = (req, res) => {
@@ -163,3 +167,21 @@ exports.orderHistory = catchAsync(async(req, res) => {
         bookings: allProductsFromBooking
     });
 });
+
+exports.getPolicy = (req, res) => {
+    res.status(200).render('generalTextPolicy', {
+        title: 'our policy'
+    });
+}
+
+exports.getContact = (req, res) => {
+    res.status(200).render('generalTextContact', {
+        title: 'contact us'
+    });
+}
+
+exports.getAboutus = (req, res) => {
+    res.status(200).render('generalTextAbout', {
+        title: 'about us'
+    });
+}

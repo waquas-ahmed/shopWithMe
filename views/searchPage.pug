@@ -33,9 +33,16 @@ block content
             //-     span 72
             //-     | )
         div(class="search__results pannel__height")
+          -const url = paginationUrl
+          -let finalUrl = url.includes('sort=') ? url.replace(/(&sort=-?[a-zA-Z]{0,15})/gi, '') : url
+          -finalUrl = finalUrl.replace('-discountPrice', '').replace('discountPrice', '')
           div(class="results__sorting")
-            a(href="#")
-              span Click Here On Price Sorting
+            span= `Click On button for Price Sorting ->`
+            a(href=`${finalUrl}&sort=discountPrice`, class="up__arrow")
+              img(src="./img/webpage/up_arrow.jpg", alt="up arrow")
+            a(href=`${finalUrl}&sort=-discountPrice` class="down__arrow")
+              img(src="./img/webpage/down_arrow.jpg", alt="dowm arrow")
+
           div(class="results__counts")
             p Total Products found:
               span= `  ${totalProducts}`
@@ -59,12 +66,13 @@ block content
             div(class="item--sequence__displayed")
               p
                 | Items:
-                -const pg = paginationUrl.split('page=')[1]
+                //- -paginationUrl = paginationUrl.includes('page') ? paginationUrl : `${paginationUrl}&page=1`
+                -const pg = paginationUrl.match(/page=(\d{1,2})/)[1]
                 -const lastPage = pg * 12 <= totalProducts ? pg * 12 : totalProducts
                 if (pg !== undefined)
                   span(class="order__sequence")= ` ${(pg - 1) * 12 + 1} - ${lastPage}`
                 span(class="total__products")= `  of ${totalProducts}`
             div(class="pagination__bar")
               - for (page = 1; page <= totalNumberOfPages; page++) {
-                a(href=`${paginationUrl.replace(/page=.+/, `page=${page}`)}`, class=`page__${page} page__align`)= page
+                a(href=`${paginationUrl.replace(/page=\d{1,2}/, `page=${page}`)}`, class=`page__${page} page__align`)= page
               - }
