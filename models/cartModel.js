@@ -21,7 +21,7 @@ const cartSchema = new mongoose.Schema({
 });
 
 cartSchema.index({
-    productId: 1
+    productId: 1, userId: 1
 }, {
     unique: true
 });

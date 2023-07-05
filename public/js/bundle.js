@@ -5560,7 +5560,7 @@ var logout = /*#__PURE__*/function () {
               if (window.location.href.includes('/myaccount')) {
                 location.assign('/');
               } else {
-                location.reload(true);
+                location.assign('/login');
               }
             }, 1500);
           }

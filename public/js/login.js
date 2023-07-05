@@ -64,7 +64,7 @@ export const logout = async () => {
                 if (window.location.href.includes('/myaccount')) {
                     location.assign('/');
                 } else {
-                    location.reload(true);
+                    location.assign('/login');
                 }
             }, 1500)
         }

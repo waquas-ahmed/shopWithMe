@@ -71,6 +71,7 @@
 
 .remove--from__cart:hover {
     color: blue;
+    cursor: pointer;
 }
 
 .payment--mode__session {
@@ -93,4 +94,5 @@
     font-size: 18px;
     font-weight: 600;
     margin: 25px 0;
+    cursor: pointer;
 }
