@@ -18,4 +18,8 @@ router.get('/myaccount', viewController.getAccount);
 router.get('/mycart', viewController.getCart);
 router.get('/orderHistory', viewController.orderHistory);
 
+router.get('/policy', viewController.getPolicy);
+router.get('/contact', viewController.getContact);
+router.get('/aboutus', viewController.getAboutus);
+
 module.exports = router;

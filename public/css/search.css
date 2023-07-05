@@ -63,9 +63,13 @@
     height: 9vh;
     display: grid;
     place-content: center;
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+    justify-content: center;
 }
 
-.results__sorting a {
+/* .results__sorting a {
     text-decoration: none;
     color: #fff;
     background-color: black;
@@ -75,6 +79,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+} */
+
+.results__sorting span {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.up__arrow img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.down__arrow img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
 }
 
 .results__counts {
