@@ -226,3 +226,11 @@
     color: rgb(253, 32, 32);
     font-weight: 600;
 }
+
+.on--current__page {
+    padding: 4px 12px;
+    font-weight: 500;
+    color: white;
+    border-radius: 50%;
+    background-color: black;
+}
