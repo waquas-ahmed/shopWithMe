@@ -3,14 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
-/*
+
 body {
     width: 1300px;
     margin: auto;
-} */
+}
 
 #main--container {
-    width: 100vw;
+    width: 1300px;
     min-height: 30vh;
 }
 
@@ -34,8 +34,10 @@ body {
 .first--section__infineMoving {
     display: flex;
     width: calc(250px * 15);
+    width: 100%;
     /* animation: scroll 60s linear infinite; */
     margin-top: 15px;
+    overflow: scroll;
 }
 
 .first--section__infineMoving:hover {

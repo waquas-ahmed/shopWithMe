@@ -13,10 +13,15 @@ exports.getHomepage = catchAsync(async (req, res) => {
     // exclusive offers which is more than 46% off
     const exlusiveOffers = await Product.find({ discountOff : { $gt : '46' }});
 
+    // exclusive offers which is more than 46% off
+    const reviewedProducts = await Product.find({ ratingQuantity : { $gt : '0' } });
+    // console.log(reviewedProducts.length)
+
     res.status(200).render('home', {
         title: 'Home Page',
         exlusiveOffers,
-        tshirtProducts: tshirtProducts.slice(3, 15)
+        tshirtProducts: tshirtProducts.slice(3, 15),
+        reviewedProducts
     });
 
 

@@ -28,3 +28,16 @@ block content
                                             span.discount= `${offerProduct.discountOff}% off`
                                             span(class="deal--of__day")   In Stock
                                         h4(class="product--card__title")= offerProduct.name
+            div(class="container--products__interestedIn")
+                div(class="interested--product__title")
+                    h2 People reviewed these Products, Recommended!!
+                ul(class="second--section__todayDeal")
+                    each reviewProduct in reviewedProducts
+                            li
+                                a(href=`/product/${reviewProduct.slug}/p/${reviewProduct.productId}`)
+                                    .product--card
+                                        img(src=`${reviewProduct.image}`, alt=`${reviewProduct.name}`, width="220px", height="210px")
+                                        div(class="todays--deal__withOff")
+                                            span.discount= `${reviewProduct.discountOff}% off`
+                                            span(class="deal--of__day")   In Stock
+                                        h4(class="product--card__title")= reviewProduct.name
