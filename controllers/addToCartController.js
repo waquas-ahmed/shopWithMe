@@ -30,6 +30,7 @@ exports.deleteProductAddtocart = catchAsync(async (req, res, next) => {
 
 exports.getAllInCart = catchAsync(async (req, res, next) => {
 
+
     const allInCarts = await addToCart.find({ userId: req.user.id });
 
     res.status(200).json({

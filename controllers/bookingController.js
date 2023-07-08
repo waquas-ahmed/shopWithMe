@@ -74,7 +74,7 @@ exports.createBookingCheckout = catchAsync(async (req, res, next) => {
   });
 
   // clearing cart for the current user
-  console.log('id', user)
+  // console.log('id', user)
   await AddToCart.deleteMany({ userId : user});
 
 

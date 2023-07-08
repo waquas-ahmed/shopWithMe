@@ -3,6 +3,7 @@ const Product = require('../models/productModel');
 const addToCart = require('../models/cartModel');
 const ApiFeatures = require('../utility/apiFeatures');
 const Booking = require('../models/bookingModel')
+const AppError = require('../utility/appError')
 
 
 exports.getHomepage = catchAsync(async (req, res) => {
@@ -151,7 +152,9 @@ exports.getAccount = (req, res) => {
     });
 }
 
-exports.getCart = catchAsync(async(req, res) => {
+exports.getCart = catchAsync(async(req, res, next) => {
+
+    if(!req.user) return next(new AppError('To view your cart! Please login to your account..', 400));
 
     const allProductsInCart = await addToCart.find({userId: req.userIs.id});
 
@@ -161,7 +164,9 @@ exports.getCart = catchAsync(async(req, res) => {
     });
 });
 
-exports.orderHistory = catchAsync(async(req, res) => {
+exports.orderHistory = catchAsync(async(req, res, next) => {
+
+    if(!req.user) return next(new AppError('To view your bookings! Please login to your account..', 400));
 
     const allProductsFromBooking = await Booking.find({userId: req.userIs.id});
 

@@ -32,22 +32,43 @@ const sendErrorDev = (err, res) => {
     });
 }
 
-const sendErrorProd = (err, res) => {
-    // operational  trusted error: sending error to the customer
+const sendErrorProd = (err, req, res) => {
+
+    // A) API
+    if (req.originalUrl.startsWith('/api')) {
+        // operational  trusted error: sending error to the customer
+        if (err.operational) {
+            return res.status(err.statusCode).json({
+                status: err.status,
+                message: err.message
+            });
+        } else {
+        // programming or other unknown error so that we wont send error details to the customer
+            return res.status(500).json({
+                status: 'error',
+                message: err
+                // status: 'error',
+                // message: 'Something went very wrong!'
+            });
+        }
+    }
+
+    // B) Rendered website
+
+    // A) operational error and trusted error and will sent this message to the client
     if (err.operational) {
-        res.status(err.statusCode).json({
-            status: err.status,
+        return res.status(err.statusCode).render('error', {
+            title: 'Something went wrong!',
             message: err.message
         });
-    } else {
-    // programming or other unknown error so that we wont send error details to the customer
-        res.status(500).json({
-            status: 'error',
-            message: err
-            // status: 'error',
-            // message: 'Something went very wrong!'
-        });
     }
+
+    // B) Programming and other unkonwn error dont leak the error details
+    // send the genuine message
+    return res.status(err.statusCode).render('error', {
+        title: 'Something went wrong!',
+        message: 'Please try again later'
+    });
 }
 
 module.exports = (err, req, res, next) => {
@@ -68,6 +89,6 @@ module.exports = (err, req, res, next) => {
         if (error.name === 'ValidationError') error = handleValidationErrorDB(error);
         // if (error.name === 'MongooseError') error = handleMongoErrorDB(error);
         // console.log(error)
-        sendErrorProd(error, res);
+        sendErrorProd(error, req, res);
     }
 }
