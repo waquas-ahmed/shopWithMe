@@ -48,7 +48,7 @@ exports.updateMe = catchAsync(async (req, res, next) => {
     if(req.file) req.body.photo = req.file.filename;
 
     // 1) create error when user passes password/passwordConfirm data
-    if (req.body.password || req.body.passwordConfirm) return next(new AppError('This route is not for the Password / passwordConfirm! Please check 127.0.0.1:8000/api/v1/users/updatePassword', 401))
+    if (req.body.password || req.body.passwordConfirm) return next(new AppError('This route is not for the Password / passwordConfirm! Please check /api/v1/users/updatePassword', 401))
 
     // 2) change the name or email in the database
     const updatedUser = await User.findByIdAndUpdate(req.user.id, req.body, {
