@@ -30,5 +30,5 @@ block content
                                     p PAID
                                     img(src="/img/webpage/checkmark.png", alt="payment successful")
                                 h5.amount= `Total Amount - ${sum}`
-                else
+                if bookings.length === 0
                     h3.no--productIn__cart There is no Booking history in Your Account!! Please Shop something...

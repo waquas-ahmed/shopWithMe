@@ -14,7 +14,7 @@ mixin reviewCard(review)
             h3= review.user.name
         h4(class="review__title")= review.reviewTitle
         p(class="review__description")= review.reviewDescription
-        -const objectDate = String(review.createdAt).split(' ').slice(0, 5).join(' ').slice(0, -3)
+        -const objectDate = String(review.createdAt).split(' ').slice(0, 4).join(' ')
         //- -const day = objectDate.getDate();
         //- -const month = objectDate.getMonth() < 10 ? `0${objectDate.getMonth() + 1}` : objectDate.getMonth() + 1;
         //- -const year = objectDate.getFullYear();

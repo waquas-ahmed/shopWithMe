@@ -1,8 +1,8 @@
 extends base
 
-mixin navItem(link, text, active)
+mixin navItem(link, text, className='')
     li
-        a(href=`${link}`)
+        a(href=`${link}`, class=`${className}`)
             span= text
 
 block content
@@ -12,16 +12,16 @@ block content
                 div(class="normal--user__menu")
                     ul
                         +navItem("/myaccount", 'settings')
-                        +navItem("#", 'bookings')
-                        +navItem("#", 'my reviews')
-                        +navItem("#", 'billing')
+                        +navItem("/orderHistory", 'all bookings')
+                        +navItem("#", 'Log Out', 'logout--button__setting')
+                        +navItem("/mycart", 'my cart')
 
-                div(class="admin__menu")
-                    h3 Admin
-                    ul
-                        +navItem("#", 'manage product')
-                        +navItem("#", 'manage users')
-                        +navItem("#", 'manage reviews')
+                //- div(class="admin__menu")
+                //-     h3 Admin
+                //-     ul
+                //-         +navItem("#", 'manage product')
+                //-         +navItem("#", 'manage users')
+                //-         +navItem("#", 'manage reviews')
 
             div(class="user__form")
                 div(class="user--nameEmail__settings")

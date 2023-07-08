@@ -4,14 +4,13 @@ import { showAlert } from './alerts';
 export const signup = async (data) => {
 
     try {
-
-        console.log(data)
+        // console.log(data)
         const response = await axios({
             method: 'POST',
             url: '/api/v1/users/signup',
             data
         });
-        console.log(response)
+        // console.log(response)
         if (response.data.status === 'success') {
             showAlert('success', `Your account has created!!`);
             window.setTimeout(()=> {
@@ -57,7 +56,7 @@ export const logout = async () => {
             method: 'POST',
             url: '/api/v1/users/logout',
         });
-        console.log(response)
+        // console.log(response)
         if (response.data.status === 'success') {
             showAlert('success', `Logged Out from the site!`);
             window.setTimeout(()=> {

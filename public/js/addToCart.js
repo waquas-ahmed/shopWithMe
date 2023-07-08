@@ -3,14 +3,14 @@ import { showAlert } from './alerts';
 
 
 export const addToCart = async url => {
-    console.log(url)
+    // console.log(url)
     try {
         const response = await axios({
             url,
             method: 'POST'
         });
         showAlert('success', `Product Added to Cart`);
-        console.log(response)
+        // console.log(response)
     } catch(error) {
         if (error.response.data.message.includes('Duplicate field Value')) {
             showAlert('warn', `Product already added at Your Cart`);
@@ -23,7 +23,7 @@ export const addToCart = async url => {
 }
 
 export const removeFromCart = async url => {
-    console.log(url)
+    // console.log(url)
     try {
         const response = await axios({
             url,

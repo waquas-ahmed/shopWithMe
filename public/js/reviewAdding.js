@@ -22,5 +22,5 @@ export const addingReview = async (data) => {
         showAlert('error', `${error.response.data.message}`);
     }
 
-    console.log(response)
+    // console.log(response)
 }

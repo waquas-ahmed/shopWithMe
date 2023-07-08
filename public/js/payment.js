@@ -8,7 +8,7 @@ export const paymentOption =  async (obj) => {
         method: 'GET'
     });
 
-    console.log(response.data.status === 'error')
+    // console.log(response.data.status === 'error')
     if (response.data.status === 'error') {
         showAlert('warn', `Please shop and add products to the cart!`);
     }

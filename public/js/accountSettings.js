@@ -16,11 +16,12 @@ export const updateData = async(data, type) => {
 
         showAlert('success', `${type} updated successfully!`);
         window.setTimeout(()=> {
-                location.reload(true);
+            location.reload(true);
         }, 2000)
 
     } catch (error) {
-        console.log(error.response.data.message);
+        // console.log(error)
+        // console.log(error.response.data.message);
         showAlert('error', `${error.response.data.message}`);
         window.setTimeout(()=> {
             buttonElementForUpdating.textContent = buttonTextForUpdating;

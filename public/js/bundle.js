@@ -5462,36 +5462,35 @@ var signup = /*#__PURE__*/function () {
       while (1) switch (_context.prev = _context.next) {
         case 0:
           _context.prev = 0;
-          console.log(data);
-          _context.next = 4;
+          _context.next = 3;
           return (0, _axios.default)({
             method: 'POST',
             url: '/api/v1/users/signup',
             data: data
           });
-        case 4:
+        case 3:
           response = _context.sent;
-          console.log(response);
+          // console.log(response)
           if (response.data.status === 'success') {
             (0, _alerts.showAlert)('success', "Your account has created!!");
             window.setTimeout(function () {
               location.assign('/');
             }, 1000);
           }
-          _context.next = 13;
+          _context.next = 11;
           break;
-        case 9:
-          _context.prev = 9;
+        case 7:
+          _context.prev = 7;
           _context.t0 = _context["catch"](0);
           (0, _alerts.showAlert)('error', "".concat(_context.t0.response.data.message));
           window.setTimeout(function () {
             location.assign('/');
           }, 100000);
-        case 13:
+        case 11:
         case "end":
           return _context.stop();
       }
-    }, _callee, null, [[0, 9]]);
+    }, _callee, null, [[0, 7]]);
   }));
   return function signup(_x) {
     return _ref.apply(this, arguments);
@@ -5553,7 +5552,7 @@ var logout = /*#__PURE__*/function () {
           });
         case 3:
           response = _context3.sent;
-          console.log(response);
+          // console.log(response)
           if (response.data.status === 'success') {
             (0, _alerts.showAlert)('success', "Logged Out from the site!");
             window.setTimeout(function () {
@@ -5564,17 +5563,17 @@ var logout = /*#__PURE__*/function () {
               }
             }, 1500);
           }
-          _context3.next = 11;
+          _context3.next = 10;
           break;
-        case 8:
-          _context3.prev = 8;
+        case 7:
+          _context3.prev = 7;
           _context3.t0 = _context3["catch"](0);
           console.log(_context3.t0);
-        case 11:
+        case 10:
         case "end":
           return _context3.stop();
       }
-    }, _callee3, null, [[0, 8]]);
+    }, _callee3, null, [[0, 7]]);
   }));
   return function logout() {
     return _ref3.apply(this, arguments);
@@ -5617,17 +5616,18 @@ var updateData = /*#__PURE__*/function () {
           window.setTimeout(function () {
             location.reload(true);
           }, 2000);
-          _context.next = 15;
+          _context.next = 14;
           break;
         case 10:
           _context.prev = 10;
           _context.t0 = _context["catch"](2);
-          console.log(_context.t0.response.data.message);
+          // console.log(error)
+          // console.log(error.response.data.message);
           (0, _alerts.showAlert)('error', "".concat(_context.t0.response.data.message));
           window.setTimeout(function () {
             buttonElementForUpdating.textContent = buttonTextForUpdating;
           }, 4000);
-        case 15:
+        case 14:
         case "end":
           return _context.stop();
       }
@@ -5681,8 +5681,6 @@ var addingReview = /*#__PURE__*/function () {
           _context.t0 = _context["catch"](0);
           (0, _alerts.showAlert)('error', "".concat(_context.t0.response.data.message));
         case 9:
-          console.log(response);
-        case 10:
         case "end":
           return _context.stop();
       }
@@ -5713,32 +5711,31 @@ var addToCart = /*#__PURE__*/function () {
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          console.log(url);
-          _context.prev = 1;
-          _context.next = 4;
+          _context.prev = 0;
+          _context.next = 3;
           return (0, _axios.default)({
             url: url,
             method: 'POST'
           });
-        case 4:
+        case 3:
           response = _context.sent;
           (0, _alerts.showAlert)('success', "Product Added to Cart");
-          console.log(response);
-          _context.next = 12;
+          // console.log(response)
+          _context.next = 10;
           break;
-        case 9:
-          _context.prev = 9;
-          _context.t0 = _context["catch"](1);
+        case 7:
+          _context.prev = 7;
+          _context.t0 = _context["catch"](0);
           if (_context.t0.response.data.message.includes('Duplicate field Value')) {
             (0, _alerts.showAlert)('warn', "Product already added at Your Cart");
           } else {
             (0, _alerts.showAlert)('error', "".concat(_context.t0.response.data.message));
           }
-        case 12:
+        case 10:
         case "end":
           return _context.stop();
       }
-    }, _callee, null, [[1, 9]]);
+    }, _callee, null, [[0, 7]]);
   }));
   return function addToCart(_x) {
     return _ref.apply(this, arguments);
@@ -5751,30 +5748,29 @@ var removeFromCart = /*#__PURE__*/function () {
     return _regeneratorRuntime().wrap(function _callee2$(_context2) {
       while (1) switch (_context2.prev = _context2.next) {
         case 0:
-          console.log(url);
-          _context2.prev = 1;
-          _context2.next = 4;
+          _context2.prev = 0;
+          _context2.next = 3;
           return (0, _axios.default)({
             url: url,
             method: 'DELETE'
           });
-        case 4:
+        case 3:
           response = _context2.sent;
           if (response.status === 204) {
             (0, _alerts.showAlert)('success', "Removed from the cart");
             window.location.reload(true);
           }
-          _context2.next = 11;
+          _context2.next = 10;
           break;
-        case 8:
-          _context2.prev = 8;
-          _context2.t0 = _context2["catch"](1);
+        case 7:
+          _context2.prev = 7;
+          _context2.t0 = _context2["catch"](0);
           (0, _alerts.showAlert)('error', "".concat(_context2.t0.response.data.message));
-        case 11:
+        case 10:
         case "end":
           return _context2.stop();
       }
-    }, _callee2, null, [[1, 8]]);
+    }, _callee2, null, [[0, 7]]);
   }));
   return function removeFromCart(_x2) {
     return _ref2.apply(this, arguments);
@@ -5809,7 +5805,7 @@ var paymentOption = /*#__PURE__*/function () {
           });
         case 3:
           response = _context.sent;
-          console.log(response.data.status === 'error');
+          // console.log(response.data.status === 'error')
           if (response.data.status === 'error') {
             (0, _alerts.showAlert)('warn', "Please shop and add products to the cart!");
           }
@@ -5819,7 +5815,7 @@ var paymentOption = /*#__PURE__*/function () {
               location.assign(response.data.session.url);
             }, 2000);
           }
-        case 7:
+        case 6:
         case "end":
           return _context.stop();
       }
@@ -5842,6 +5838,7 @@ var _payment = require("./payment");
 var signupForm = document.querySelector('.user--signup__form');
 var loginForm = document.querySelector('.login--form__box');
 var logoutButton = document.querySelector('.logout--button');
+var logoutButtonSetting = document.querySelector('.logout--button__setting');
 var userDataForm = document.querySelector('.form--user__data');
 var userPasswordForm = document.querySelector('.form--user__password');
 var userFormReview = document.querySelector('#adding__review');
@@ -5855,7 +5852,7 @@ var addToCartSubmissionForm = document.querySelector('.addToCart__submission');
 
 if (signupForm) signupForm.addEventListener('submit', function (e) {
   e.preventDefault();
-  document.querySelector('.signup__button').textContent = 'Creating...';
+  // document.querySelector('.signup__button').textContent = 'Creating...';
   var form = new FormData();
   form.append('name', document.getElementById('name').value);
   form.append('email', document.getElementById('email').value);
@@ -5863,6 +5860,7 @@ if (signupForm) signupForm.addEventListener('submit', function (e) {
   form.append('passwordConfirm', document.getElementById('passwordConfirm').value);
   document.getElementById('photo').files[0] ? form.append('photo', document.getElementById('photo').files[0]) : '';
   (0, _login.signup)(form);
+  // document.querySelector('.signup__button').textContent = 'Sign Up';
 
   // const name = document.getElementById('name').value;
   // const email = document.getElementById('email').value;
@@ -5882,8 +5880,14 @@ if (loginForm) {
   });
 }
 
-// logout functionality
+// logout functionality on header
 if (logoutButton) logoutButton.addEventListener('click', function (e) {
+  e.preventDefault();
+  (0, _login.logout)();
+});
+
+// logout functionality on account settings
+if (logoutButtonSetting) logoutButtonSetting.addEventListener('click', function (e) {
   e.preventDefault();
   (0, _login.logout)();
 });
@@ -5903,16 +5907,19 @@ if (userDataForm) userDataForm.addEventListener('submit', function (e) {
 // updating password data under methodology
 if (userPasswordForm) userPasswordForm.addEventListener('submit', function (e) {
   e.preventDefault();
-  var formPasswordButton = document.querySelector('.form--user__passwordButton').textContent = 'Updating...';
   var passwordCurrent = document.getElementById('password-current').value;
   var password = document.getElementById('password').value;
   var passwordConfirm = document.getElementById('password-confirm').value;
-  (0, _accountSettings.updateData)({
-    passwordCurrent: passwordCurrent,
-    password: password,
-    passwordConfirm: passwordConfirm
-  }, 'Password');
-  formPasswordButton.textContent = 'Save Password';
+  var formPasswordButton;
+  if (passwordCurrent && password && passwordConfirm) {
+    formPasswordButton = document.querySelector('.form--user__passwordButton').textContent = 'Updating...';
+    (0, _accountSettings.updateData)({
+      passwordCurrent: passwordCurrent,
+      password: password,
+      passwordConfirm: passwordConfirm
+    }, 'Password');
+    formPasswordButton.textContent = 'Save Password';
+  }
 });
 
 // adding review for the user

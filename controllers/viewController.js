@@ -154,7 +154,7 @@ exports.getAccount = (req, res) => {
 
 exports.getCart = catchAsync(async(req, res, next) => {
 
-    if(!req.user) return next(new AppError('To view your cart! Please login to your account..', 400));
+    if(!req.userIs) return next(new AppError('To view your cart! Please login to your account..', 400));
 
     const allProductsInCart = await addToCart.find({userId: req.userIs.id});
 
@@ -166,12 +166,10 @@ exports.getCart = catchAsync(async(req, res, next) => {
 
 exports.orderHistory = catchAsync(async(req, res, next) => {
 
-    if(!req.user) return next(new AppError('To view your bookings! Please login to your account..', 400));
+    if(!req.userIs) return next(new AppError('To view your bookings! Please login to your account..', 400));
 
     const allProductsFromBooking = await Booking.find({userId: req.userIs.id});
 
-    // console.log(allProductsFromBooking)
-    // console.log(allProductsFromBooking.length)
     res.status(200).render('bookings', {
         title: 'Your Order History',
         bookings: allProductsFromBooking

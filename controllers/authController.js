@@ -60,7 +60,7 @@ exports.signup = catchAsync(async(req, res) => {
     // });
 
     // email sending part
-    const url = '/myaccount';
+    const url = 'http://127.0.0.1:8000/myaccount';
     await new sendEmail(newUser, url).sendWelcome();
 
     createSendToken(newUser, 200, res);
