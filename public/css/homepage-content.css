@@ -35,9 +35,9 @@ body {
     display: flex;
     width: calc(250px * 15);
     width: 100%;
-    /* animation: scroll 60s linear infinite; */
+    animation: scroll 60s linear infinite;
     margin-top: 15px;
-    overflow: scroll;
+    /* overflow: scroll; */
 }
 
 .first--section__infineMoving:hover {
