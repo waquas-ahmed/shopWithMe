@@ -25,7 +25,7 @@ block content
                                             p= `Total: Rs ${booking.productId[i].discountPrice *  booking.quantity[i]}`
                             - }
                             .paid
-                                h5.date= `Purchased Date - ${String(new Date(booking.createdAt)).split(' ').slice(0, 5).join(' ').slice(0, -3)}`
+                                h5.date= `Purchased Date - ${String(new Date(booking.createdAt)).split(' ').slice(0, 4).join(' ')}`
                                 div
                                     p PAID
                                     img(src="/img/webpage/checkmark.png", alt="payment successful")
